@@ -26,6 +26,7 @@ function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
 
+// Initial data
 const rowsData = [
   createData('Cupcake', 305, 3.7, 67, 4.3),
   createData('Donut', 452, 25.0, 51, 4.9),
