@@ -242,7 +242,7 @@ export default function EnhancedTable() {
     setOrderBy(property);
   };
 
-  // Handler for search from input
+  // Handler to search from input
   const handleSearch = (event) => {
     let filteredRows = rowsData.filter(function (item) {
       return item.name.includes(event.target.value);
@@ -301,7 +301,7 @@ export default function EnhancedTable() {
       <Paper className={classes.paper}>
         <EnhancedTableToolbar numSelected={selected.length} />
         {/* Search component */}
-        <Search rows={rows} handleSearch={handleSearch} /> 
+        <Search handleSearch={handleSearch} /> 
         <TableContainer>
           <Table
             className={classes.table}
