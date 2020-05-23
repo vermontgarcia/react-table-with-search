@@ -214,6 +214,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// Input component to perform search on table
 function Search({ handleSearch }) {
   return (
     <div style={{ width: 300 }}>
@@ -230,6 +231,8 @@ export default function EnhancedTable() {
   const [page, setPage] = useState(0);
   const [dense, setDense] = useState(false);
   const [rowsPerPage, setRowsPerPage] = useState(5);
+
+  // State to manage the rows data
   const [rows, setRows] = useState (rowsData)
 
   const handleRequestSort = (event, property) => {
@@ -238,6 +241,7 @@ export default function EnhancedTable() {
     setOrderBy(property);
   };
 
+  // Handler for search from input
   const handleSearch = (event) => {
     let filteredRows = rowsData.filter(function (item) {
       return item.name.includes(event.target.value);
@@ -295,7 +299,8 @@ export default function EnhancedTable() {
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <EnhancedTableToolbar numSelected={selected.length} />
-        <Search rows={rows} handleSearch={handleSearch} />
+        {/* Search component */}
+        <Search rows={rows} handleSearch={handleSearch} /> 
         <TableContainer>
           <Table
             className={classes.table}
